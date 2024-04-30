@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akku</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #0b0c0d;
+        }
+        .box {
+            width: 150px; 
+            height: 80px;
+            border: 3px solid whitesmoke;
+            border-radius: 12px; 
+            position: relative;
+        }
+
+       
+        .box:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 9px;
+        }
+
+        .box:before {
+            width: 100%;
+            background-color: #f1efef;
+            z-index: 1;
+        }
+
+        .box:after {
+            width: 0%;
+            background: red;
+            z-index: 2;
+            animation: animate 5s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                width: 0%;
+                background: red;
+            }
+
+            25% {
+                width: 25%; 
+                background: orange;
+            }
+
+            50% {
+                width: 50%;
+                background: yellow;
+            }
+
+            75% {
+                width: 75%; 
+                background: #d7fc03;
+            }
+
+            100% {
+                width: 100%;
+                background: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-outer">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
